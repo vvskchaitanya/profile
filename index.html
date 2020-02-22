@@ -20,6 +20,11 @@
     </nav>
     <br>
     <div class="container" id="profile">
+        <div class="row">
+            <div class="col-md-4 col-sm-12">
+                <img src="images/image.jpg" alt="profile-pic"/>
+            </div>
+        </div>
 
     </div>
     <script>
@@ -49,13 +54,7 @@
                 movies: []
             },
             created: function () {
-                var success=function(data){
-                    moviesUI.movies=data;
-                }
-                var error=function(){
-                    alert("Unable to fetch movies list");
-                }
-                get("./movies.json",success,error);
+                
 
             },
             methods: {
