@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Movies UI</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <a class="navbar-brand" href="#">V.V.S.K CHAITANYA</a>
+    </nav>
+    <br>
+    <div class="container" id="profile">
+
+    </div>
+    <script>
+         var post = function (url, request, success, error) {
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: JSON.stringify(request),
+                success: success,
+                contentType: "application/json",
+                error: error
+            });
+        };
+        var get = function (url, success, error) {
+            $.ajax({
+                type: "GET",
+                url: url,
+                success: success,
+                dataType: "application/json",
+                contentType: "application/json",
+                error: error
+            });
+        };
+        var profile = new Vue({
+            el: "#profile",
+            data: {
+                movies: []
+            },
+            created: function () {
+                var success=function(data){
+                    moviesUI.movies=data;
+                }
+                var error=function(){
+                    alert("Unable to fetch movies list");
+                }
+                get("./movies.json",success,error);
+
+            },
+            methods: {
+
+            }
+        });
+       
+    </script>
+</body>
+
+</html>
