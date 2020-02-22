@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Movies UI</title>
+    <title>V.V.S.K Chaitanya</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -10,19 +10,41 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Simonetta&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <style>
+        .profile-image{
+            border-radius:150px;
+            border:1px solid burlywood;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+        .profile-image:hover{
+            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.2);
+        }
+        .name-text{
+            font-family: 'Lobster';
+            font-size: 50px;
+        }
+        .role-text{
+            font-size: 25px;
+            font-family: 'Simonetta';
+        }
+    </style>
 
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-        <a class="navbar-brand" href="#">V.V.S.K CHAITANYA</a>
-    </nav>
     <br>
     <div class="container" id="profile">
-        <div class="row">
+        <div class="row jumbotron">
             <div class="col-md-4 col-sm-12">
-                <img src="images/image.jpg" alt="profile-pic"/>
+                <div class="image-container text-center">
+                    <img src="images/image.jpg" height="250px" class="profile-image" alt="profile-pic"/>
+                </div>
+            </div>
+            <div class="col-md-8 col-sm-12">
+                    <h1 class="name-text">V.V.S.K Chaitanya</h1>      
+                    <p class="role-text" class="ml-2">Full Stack Developer</p>
             </div>
         </div>
 
