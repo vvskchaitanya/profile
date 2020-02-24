@@ -51,6 +51,9 @@
             width: inherit;
             height: inherit;
         }
+        .nav-item{
+            cursor: pointer;
+        }
     </style>
 
 </head>
@@ -88,14 +91,30 @@
                                 <div class="carousel-item" title="Node JS">
                                     <img src="images/nodejs.svg">
                                 </div>
+                                <div class="carousel-item" title="Amazon Web Services">
+                                    <img src="images/aws.png">
+                                </div>
                             </div>
                         </div>
                     </div>
                     <p><i class="material-icons info-mail-icon">mail</i><span><a href="mailto:vvskchaitanya@gmail.com">vvskchaitanya@gmail.com</a></span></p>
                     <p><i class="material-icons info-phone-icon">phone</i><span><a href="tel:+917032071496">+91 7032071496</a></span></p>
             </div>
+            <ul class="nav nav-pills nav-justified w-100 mt-5">
+                <li class="nav-item">
+                  <a class="nav-link" v-bind:class="{'active': view=='about'}" @click="view='about'">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" v-bind:class="{'active': view=='exper'}" @click="view='exper'">Experience</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" v-bind:class="{'active': view=='cert'}" @click="view='cert'">Certifications</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" v-bind:class="{'active': view=='awar'}" @click="view='awar'">Awards</a>
+                </li>
+              </ul>
         </div>
-
     </div>
     <script>
          var post = function (url, request, success, error) {
@@ -121,7 +140,7 @@
         var profile = new Vue({
             el: "#profile",
             data: {
-                movies: []
+                view: 'about'
             },
             created: function () {
                 
