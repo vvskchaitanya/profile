@@ -13,45 +13,57 @@
     <link href="https://fonts.googleapis.com/css?family=Lobster|Simonetta&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <style>
-        .profile-image{
-            border-radius:150px;
-            border:1px solid burlywood;
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        .profile-image {
+            border-radius: 150px;
+            border: 1px solid burlywood;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
         }
-        .profile-image:hover{
-            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.2);
+
+        .profile-image:hover {
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
         }
-        .name-text{
+
+        .name-text {
             font-family: 'Lobster';
             font-size: 50px;
         }
-        .role-text{
+
+        .role-text {
             font-size: 25px;
             font-family: 'Simonetta';
         }
-        .info-mail-icon{
+
+        .info-mail-icon {
             margin-right: 4px;
             color: tomato;
             vertical-align: middle;
         }
-        .info-phone-icon{
+
+        .info-phone-icon {
             margin-right: 4px;
             color: yellowgreen;
             vertical-align: middle;
         }
-        .carousel{
+
+        .carousel {
             display: inline-block;
             vertical-align: middle;
             margin-left: 20px;
         }
-        .carousel-item,.carousel-inner,.carousel{
-            height: 50px;width: 50px;
+
+        .carousel-item,
+        .carousel-inner,
+        .carousel {
+            height: 50px;
+            width: 50px;
         }
-        .carousel-item img{
+
+        .carousel-item img {
             width: inherit;
             height: inherit;
         }
-        .nav-item{
+
+        .nav-item {
             cursor: pointer;
         }
     </style>
@@ -64,60 +76,178 @@
         <div class="row jumbotron">
             <div class="col-md-4 col-sm-12">
                 <div class="image-container text-center">
-                    <img src="images/image.jpg" height="250px" class="profile-image" alt="profile-pic"/>
+                    <img src="images/image.jpg" height="250px" class="profile-image" alt="profile-pic" />
                 </div>
             </div>
             <div class="col-md-8 col-sm-12">
-                    <h1 class="name-text">V.V.S.K Chaitanya</h1>
-                    <div>
-                        <span class="role-text" class="ml-2">Full Stack Developer</span>
-                        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="500">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active" title="Java">
-                                    <img src="images/java.png">
-                                </div>
-                                <div class="carousel-item" title="Angular">
-                                    <img src="images/angular.svg">
-                                </div>
-                                <div class="carousel-item" title="Spring">
-                                    <img src="images/spring.png">
-                                </div>
-                                <div class="carousel-item" title="Spring Boot">
-                                    <img src="images/boot.png">
-                                </div>
-                                <div class="carousel-item" title="Alfresco">
-                                    <img src="images/alfresco.png">
-                                </div>
-                                <div class="carousel-item" title="Node JS">
-                                    <img src="images/nodejs.svg">
-                                </div>
-                                <div class="carousel-item" title="Amazon Web Services">
-                                    <img src="images/aws.png">
-                                </div>
+                <h1 class="name-text">V.V.S.K Chaitanya</h1>
+                <div>
+                    <span class="role-text" class="ml-2">Full Stack Developer</span>
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="500">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" title="Java">
+                                <img src="images/java.png">
+                            </div>
+                            <div class="carousel-item" title="Angular">
+                                <img src="images/angular.svg">
+                            </div>
+                            <div class="carousel-item" title="Spring">
+                                <img src="images/spring.png">
+                            </div>
+                            <div class="carousel-item" title="Spring Boot">
+                                <img src="images/boot.png">
+                            </div>
+                            <div class="carousel-item" title="Alfresco">
+                                <img src="images/alfresco.png">
+                            </div>
+                            <div class="carousel-item" title="Node JS">
+                                <img src="images/nodejs.svg">
+                            </div>
+                            <div class="carousel-item" title="Amazon Web Services">
+                                <img src="images/aws.png">
                             </div>
                         </div>
                     </div>
-                    <p><i class="material-icons info-mail-icon">mail</i><span><a href="mailto:vvskchaitanya@gmail.com">vvskchaitanya@gmail.com</a></span></p>
-                    <p><i class="material-icons info-phone-icon">phone</i><span><a href="tel:+917032071496">+91 7032071496</a></span></p>
+                </div>
+                <p><i class="material-icons info-mail-icon">mail</i><span><a
+                            href="mailto:vvskchaitanya@gmail.com">vvskchaitanya@gmail.com</a></span></p>
+                <p><i class="material-icons info-phone-icon">phone</i><span><a href="tel:+917032071496">+91
+                            7032071496</a></span></p>
             </div>
             <ul class="nav nav-pills nav-justified w-100 mt-5">
                 <li class="nav-item">
-                  <a class="nav-link" v-bind:class="{'active': view=='about'}" @click="view='about'">About</a>
+                    <a class="nav-link" v-bind:class="{'active': view=='about'}" @click="view='about'">About</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" v-bind:class="{'active': view=='exper'}" @click="view='exper'">Experience</a>
+                    <a class="nav-link" v-bind:class="{'active': view=='exper'}" @click="view='exper'">Experience</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" v-bind:class="{'active': view=='cert'}" @click="view='cert'">Certifications</a>
+                    <a class="nav-link" v-bind:class="{'active': view=='cert'}" @click="view='cert'">Certifications</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" v-bind:class="{'active': view=='awar'}" @click="view='awar'">Awards</a>
+                    <a class="nav-link" v-bind:class="{'active': view=='awar'}" @click="view='awar'">Awards</a>
                 </li>
-              </ul>
+            </ul>
+            <div class="mt-3" v-if="view=='about'">
+                <div class="col-sm-12 col-md-6 border border-light pt-3">
+                    <ul>
+                        <li>Learning and application of trending web technology stacks.</li>
+                        <li>Web Application Development using suitable and effective technologies.</li>
+                        <li>Experience in RESTFUL Services development using Spring MVC, Spring Boot.</li>
+                        <li>Experience in the development of Single Page App using Angular, VueJS.</li>
+                        <li>Knowledge on security frameworks like Spring Security, OAuth, SAML.</li>
+                    </ul>
+                </div>
+                <div class="col-sm-12 col-md-5">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th colspan="2">TECHNICAL SKILLS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>JAVA </td>
+                                <td>★★★★★</td>
+                            </tr>
+                            <tr>
+                                <td>Spring MVC </td>
+                                <td>★★★★☆</td>
+                            </tr>
+                            <tr>
+                                <td>Spring Boot </td>
+                                <td>★★★★☆</td>
+                            </tr>
+                            <tr>
+                                <td>Spring Security </td>
+                                <td>★★★★☆</td>
+                            </tr>
+                            <tr>
+                                <td>HTML5 CSS3 JS </td>
+                                <td>★★★★★</td>
+                            </tr>
+                            <tr>
+                                <td>JQuery</td>
+                                <td>★★★★☆</td>
+                            </tr>
+                            <tr>
+                                <td>Angular</td>
+                                <td>★★★★☆</td>
+                            </tr>
+                            <tr>
+                                <td>Node JS </td>
+                                <td>★★★☆☆</td>
+                            </tr>
+                            <tr>
+                                <td>Material Design</td>
+                                <td>★★★☆☆</td>
+                            </tr>
+                            <tr>
+                                <td>Maven , NPM</td>
+                                <td>★★★☆☆</td>
+                            </tr>
+                            <tr>
+                                <td>MySQL , Oracle</td>
+                                <td>★★★☆☆</td>
+                            </tr>
+                            <tr>
+                                <td>AWS</td>
+                                <td>★★★★☆</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th colspan="2">INTERPERSONAL SKILLS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Communication </td>
+                                <td>★★★★★</td>
+                            </tr>
+
+                            <tr>
+                                <td>Creativity</td>
+                                <td>★★★★★</td>
+                            </tr>
+                            <tr>
+                                <td>Problem Solving
+                                <td>★★★★★</td>
+                            </tr>
+                            <tr>
+                                <td>Team work
+                                <td>★★★★☆
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Critical Analysis
+                                <td>★★★★☆</td>
+                            </tr>
+                            <tr>
+                                <td>Management
+                                <td>★★★★☆</td>
+                            </tr>
+                            <tr>
+                                <td>Negotiation
+                                <td>★★★☆☆</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+            <div v-if="view=='exper'">
+
+            </div>
+            <div v-if="view=='cert'"></div>
+            <div v-if="view=='awar'"></div>
         </div>
     </div>
     <script>
-         var post = function (url, request, success, error) {
+        var post = function (url, request, success, error) {
             $.ajax({
                 type: "POST",
                 url: url,
@@ -143,14 +273,14 @@
                 view: 'about'
             },
             created: function () {
-                
+
 
             },
             methods: {
 
             }
         });
-       
+
     </script>
 </body>
 
